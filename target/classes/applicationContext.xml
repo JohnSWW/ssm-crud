@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-	<context:component-scan base-package="com.atguigu">
+	<context:component-scan base-package="com.ssm">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	<!-- ========================数据源配置 ===================================== -->
@@ -32,7 +32,7 @@
 	
 	<!-- 配置扫描器，，将mybatis接口的实现加入到ioc容器 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.atguigu.crud.dao"></property>
+		<property name="basePackage" value="com.ssm.crud.dao"></property>
 	</bean>
 	<!-- 配置一个可以执行批量的sqlsession -->
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -48,7 +48,7 @@
 	<!-- 开启基于注解的事物 -->
 	<aop:config>
 		<!-- 切入点表达式 -->
-		<aop:pointcut expression="execution(* com.atguigu.crud.service..*(..))" id="txPoint"/>
+		<aop:pointcut expression="execution(* com.ssm.crud.service..*(..))" id="txPoint"/>
 		<!-- 配置事物增强 -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
 	</aop:config>

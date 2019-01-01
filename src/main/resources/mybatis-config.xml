@@ -9,7 +9,7 @@
 	</settings>
 	
 	<typeAliases>
-		<package name="com.atguigu.crud.bean"/>
+		<package name="com.ssm.crud.bean"/>
 	</typeAliases>
 	
 	<plugins>
